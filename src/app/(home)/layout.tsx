@@ -1,3 +1,4 @@
+import { SideBar } from "@/features/chat/components/SideBar";
 import { SettingsModal } from "@/features/settings/components/SettingModal/SettingsModal";
 import { TopBar } from "@chat/components/TopBar";
 
@@ -6,6 +7,7 @@ export default function Layout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className="flex h-screen w-screen">
+      <SideBar />
       <div className="flex h-full w-full flex-col items-center">
         <TopBar />
         {children}
