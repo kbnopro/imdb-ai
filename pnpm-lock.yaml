@@ -35,6 +35,9 @@ importers:
       client-only:
         specifier: ^0.0.1
         version: 0.0.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       lucide-react:
         specifier: ^0.522.0
         version: 0.522.0(react@19.0.0)

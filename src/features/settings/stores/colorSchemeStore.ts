@@ -1,7 +1,5 @@
+import type { ColorSchemes } from "@/types/constants";
 import { create } from "zustand";
-
-const COLOR_SCHEMES = ["light", "dark"];
-type ColorSchemes = (typeof COLOR_SCHEMES)[number];
 
 interface ColorSchemeStore {
   selectedScheme: ColorSchemes;

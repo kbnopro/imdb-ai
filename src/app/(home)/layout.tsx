@@ -5,7 +5,7 @@ export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div className="flex h-screen w-screen">
+    <div className="flex h-screen w-screen bg-white dark:bg-neutral-800">
       <div className="flex h-full w-full flex-col items-center">
         <TopBar />
         {children}
