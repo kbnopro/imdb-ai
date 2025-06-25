@@ -22,7 +22,7 @@ export const SettingsModal = () => {
       {/* Full-screen container to center the panel */}
       <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
         {/* The actual dialog panel  */}
-        <DialogPanel className="h-72 w-full max-w-lg rounded-lg bg-neutral-50 p-4">
+        <DialogPanel className="h-fit w-full max-w-lg rounded-lg bg-neutral-50 p-4 dark:bg-neutral-700/50">
           <DialogTitle className="border-b border-neutral-400 pb-2 text-lg font-bold">
             Settings
           </DialogTitle>
