@@ -1,0 +1,6 @@
+model Chat {
+  id     String @id @default(uuid())
+  name   String @default("New Chat")
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

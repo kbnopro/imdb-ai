@@ -1,13 +1,13 @@
 import { createCallerFactory, mergeRouters } from "@/server/api/trpc";
-import { testRouter } from "./routers/test";
 import type { AnyRouter } from "@trpc/server";
+import { chatRouter } from "./routers/chat";
 
 /**
  * This is the primary router for your server.
  *
  * All routers added in /api/routers should be manually added here.
  */
-export const appRouter = mergeRouters(testRouter) as AnyRouter;
+export const appRouter = mergeRouters(chatRouter) as AnyRouter;
 
 /**
  * Create a server-side caller for the tRPC API.

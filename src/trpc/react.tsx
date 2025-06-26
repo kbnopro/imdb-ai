@@ -11,7 +11,7 @@ import { type AnyRouter } from "@trpc/server";
 import SuperJSON from "superjson";
 
 import { createQueryClient } from "./query-client";
-import { type testRouter } from "@/server/api/routers/test";
+import { type chatRouter } from "@/server/api/routers/chat";
 
 let clientQueryClientSingleton: QueryClient | undefined = undefined;
 const getQueryClient = () => {
@@ -64,4 +64,4 @@ const createApi = <TRouter extends AnyRouter>() => {
   });
 };
 
-export const testApi = createApi<typeof testRouter>();
+export const chatApi = createApi<typeof chatRouter>();

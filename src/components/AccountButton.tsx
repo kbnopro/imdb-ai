@@ -22,7 +22,7 @@ export const AccountButton = async () => {
         )}
       </PopoverButton>
       <PopoverPanel
-        className="z-50 w-64 rounded-lg border border-neutral-300 bg-white px-2 pt-3 pb-2 shadow-md dark:border-neutral-600 dark:bg-neutral-800 dark:shadow-neutral-700"
+        className="z-50 w-64 rounded-lg border border-neutral-300 bg-white px-2 pt-3 pb-2 shadow-md dark:border-neutral-600 dark:bg-neutral-800 dark:shadow-neutral-700/50"
         anchor={{
           to: "bottom end",
           gap: "5px",

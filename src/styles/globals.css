@@ -11,3 +11,11 @@
 body {
   @apply bg-white text-black dark:bg-neutral-800 dark:text-white;
 }
+
+.sidebar-scrollbar-dark {
+  scrollbar-color: #404040 transparent;
+}
+
+.sidebar-scrollbar {
+  scrollbar-color: #a1a1a1 transparent;
+}
