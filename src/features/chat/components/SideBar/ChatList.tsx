@@ -7,10 +7,12 @@ import { CustomLink } from "./CustomLink";
 const Chats = () => {
   const chatListQuery = useSuspenseQuery(chatApi.chat.getList.queryOptions());
   return (
-    <div className="flex h-fit w-full flex-col items-start justify-start gap-1">
+    <div className="flex w-full flex-col items-start justify-start gap-1">
       {chatListQuery.data.map((chat) => (
         <CustomLink href={`/chat/${chat.id}`} key={chat.id}>
-          {chat.name}
+          <div className="line-clamp-1">
+            <p>{chat.name}</p>
+          </div>
         </CustomLink>
       ))}
     </div>

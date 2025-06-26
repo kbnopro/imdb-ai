@@ -13,7 +13,7 @@ export const CustomLink = ({ children, ...props }: CustomLinkProps) => {
   return (
     <Link
       className={clsx(
-        "flex w-full items-center gap-4 rounded-lg p-1.5",
+        "flex w-full items-center gap-4 rounded-lg px-2 py-1.5",
         active
           ? "bg-neutral-200 dark:bg-neutral-700/80"
           : "hover:bg-neutral-200/50 dark:hover:bg-neutral-700/40",

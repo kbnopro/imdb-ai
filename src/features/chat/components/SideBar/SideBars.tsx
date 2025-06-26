@@ -47,14 +47,15 @@ export const ExpandedSideBar = () => {
     <div
       ref={ref}
       className={clsx(
-        "sidebar-scrollbar dark:sidebar-scrollbar-dark flex h-screen w-72 flex-col items-start justify-start gap-5 overflow-x-auto border-r border-neutral-300 bg-neutral-50 text-neutral-900 dark:border-neutral-900 dark:bg-neutral-900 dark:text-neutral-200",
+        "sidebar-scrollbar dark:sidebar-scrollbar-dark flex h-screen w-86 flex-col items-start justify-start gap-5 overflow-x-auto border-r border-neutral-300 bg-neutral-50 text-neutral-900 dark:border-neutral-900 dark:bg-neutral-900 dark:text-neutral-200",
       )}
     >
       <div
         className={clsx(
-          "sticky top-0 z-10 flex w-full flex-col items-start justify-start gap-5 bg-neutral-50 px-2 dark:bg-neutral-900",
-          scrollPosition &&
-            "shadow-sm shadow-neutral-300 dark:shadow-neutral-700",
+          "sticky top-0 z-10 flex w-full flex-col items-start justify-start gap-5 bg-neutral-50 px-2 shadow-sm transition-all duration-300 dark:bg-neutral-900",
+          scrollPosition
+            ? "shadow-neutral-300 dark:shadow-neutral-700/40"
+            : "shadow-transparent",
         )}
       >
         <div className="mt-3.5 flex w-full shrink-0 items-center justify-between">
