@@ -1,13 +1,13 @@
 import { db } from "@/server/db";
 
-export const createChat = ({
+export const createChat = async ({
   name,
   userId,
 }: {
   name?: string;
   userId: string;
 }) => {
-  return db.chat.create({
+  return await db.chat.create({
     data: {
       name,
       userId,

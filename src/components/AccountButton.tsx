@@ -22,14 +22,14 @@ export const AccountButton = async () => {
         )}
       </PopoverButton>
       <PopoverPanel
-        className="z-50 w-64 rounded-lg border border-neutral-300 bg-white px-2 pt-3 pb-2 shadow-md dark:border-neutral-600 dark:bg-neutral-800 dark:shadow-neutral-700/50"
+        className="z-50 w-64 rounded-lg border border-neutral-300 bg-white px-2 pt-3 pb-2 shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:shadow-neutral-900/80"
         anchor={{
           to: "bottom end",
           gap: "5px",
         }}
       >
         <div className="flex h-fit w-full flex-col items-stretch justify-start gap-1">
-          <div className="mb-1 flex h-fit w-full flex-col items-start justify-start border-b border-b-neutral-200 px-2 pb-2 dark:border-neutral-600">
+          <div className="mb-1 flex h-fit w-full flex-col items-start justify-start border-b border-b-neutral-200 px-2 pb-2 dark:border-neutral-700">
             <div className="text-xs text-neutral-800 dark:text-white">
               {session.user.name}
             </div>

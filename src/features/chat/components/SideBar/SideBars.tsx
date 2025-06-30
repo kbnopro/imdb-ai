@@ -8,10 +8,29 @@ import {
   SidebarOpenIcon,
 } from "lucide-react";
 import { ChatList } from "./ChatList";
-import { CustomLink } from "./CustomLink";
 import { useRef } from "react";
 import clsx from "clsx";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
+import type { LinkProps } from "next/link";
+import Link from "next/link";
+
+interface CustomLinkProps extends Omit<LinkProps, "className"> {
+  children?: React.ReactNode;
+}
+
+const CustomLink = ({ children, ...props }: CustomLinkProps) => {
+  return (
+    <Link
+      className={clsx(
+        "flex w-full items-center gap-4 rounded-lg px-2 py-1.5",
+        "hover:bg-neutral-200/50 dark:hover:bg-neutral-700/40",
+      )}
+      {...props}
+    >
+      {children ?? <></>}
+    </Link>
+  );
+};
 
 export const SmallSideBar = () => {
   const { isOpen, setIsOpen } = useSideBarStore((state) => state);
@@ -19,7 +38,7 @@ export const SmallSideBar = () => {
     return <></>;
   }
   return (
-    <div className="flex h-screen w-fit flex-col items-center justify-start gap-5 border-r border-gray-300 px-2 text-neutral-900 dark:border-neutral-900 dark:text-neutral-200">
+    <div className="flex h-screen w-fit shrink-0 grow-0 flex-col items-center justify-start gap-5 border-r border-gray-300 px-2 text-neutral-900 dark:border-neutral-900 dark:text-neutral-200">
       <button
         onClick={() => setIsOpen(true)}
         className="group mt-3.5 flex w-fit cursor-pointer items-center justify-center rounded-lg p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-700"
@@ -47,7 +66,7 @@ export const ExpandedSideBar = () => {
     <div
       ref={ref}
       className={clsx(
-        "sidebar-scrollbar dark:sidebar-scrollbar-dark flex h-screen w-86 flex-col items-start justify-start gap-5 overflow-x-auto border-r border-neutral-300 bg-neutral-50 text-neutral-900 dark:border-neutral-900 dark:bg-neutral-900 dark:text-neutral-200",
+        "sidebar-scrollbar dark:sidebar-scrollbar-dark flex h-screen w-64 shrink-0 grow-0 flex-col items-start justify-start gap-5 overflow-x-auto border-r border-neutral-300 bg-neutral-50 text-neutral-900 dark:border-neutral-900 dark:bg-neutral-900 dark:text-neutral-200",
       )}
     >
       <div

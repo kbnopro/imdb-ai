@@ -29,9 +29,9 @@
     "baseUrl": ".",
     "paths": {
       "@env": ["./src/env.js"],
-      "@/*": ["./src/*"],
       "@chat/*": ["./src/features/chat/*"],
-      "@settings/*": ["./src/features/settings/*"]
+      "@settings/*": ["./src/features/settings/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": [

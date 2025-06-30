@@ -2,19 +2,21 @@
 
 import { chatApi } from "@/trpc/react";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { CustomLink } from "./CustomLink";
+import { usePathname } from "next/navigation";
+import { ChatsProvider } from "./ChatsContext";
+import { Chat } from "./Chat";
 
 const Chats = () => {
   const chatListQuery = useSuspenseQuery(chatApi.chat.getList.queryOptions());
+  const pathname = usePathname();
+
   return (
     <div className="flex w-full flex-col items-start justify-start gap-1">
-      {chatListQuery.data.map((chat) => (
-        <CustomLink href={`/chat/${chat.id}`} key={chat.id}>
-          <div className="line-clamp-1">
-            <p>{chat.name}</p>
-          </div>
-        </CustomLink>
-      ))}
+      <ChatsProvider pathname={pathname}>
+        {chatListQuery.data.map((chat) => (
+          <Chat key={chat.id} chat={chat} />
+        ))}
+      </ChatsProvider>
     </div>
   );
 };
@@ -22,7 +24,9 @@ const Chats = () => {
 export const ChatList = () => {
   return (
     <div className="flex size-full flex-col items-start gap-3 px-2">
-      <div className="ml-2 font-medium dark:text-neutral-400">Chats</div>
+      <div className="ml-4 font-semibold text-neutral-500 dark:text-neutral-400">
+        Chats
+      </div>
       <Chats />
     </div>
   );
