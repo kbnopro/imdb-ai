@@ -6,7 +6,7 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import { useSettingModalStore } from "@settings/stores/settingModalStore";
+import { useSettingModalStore } from "@/stores/settingModalStore";
 import { ColorMode } from "./ColorMode";
 
 export const SettingsModal = () => {

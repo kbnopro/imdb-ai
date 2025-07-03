@@ -1,6 +1,6 @@
 "use client";
 
-import { useSettingModalStore } from "@settings/stores/settingModalStore";
+import { useSettingModalStore } from "@/stores/settingModalStore";
 import type { ButtonProps } from "@/types/HTMLProps";
 
 export const ToggleSettingButton = ({

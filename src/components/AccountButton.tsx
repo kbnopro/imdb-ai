@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { LogOutIcon, SettingsIcon } from "lucide-react";
 
 import { auth, signOut } from "@/server/auth";
-import { ToggleSettingButton } from "@/features/settings/components/SettingModal/ToggleSettingButton";
+import { ToggleSettingButton } from "@/components/ToggleSettingButton";
 
 export const AccountButton = async () => {
   const session = await auth();
